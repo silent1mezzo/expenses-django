@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+{% for report in reports %}
+    <div>
+        <h2>{{ report.name }}</h2>
+        
+        {% for expense in report.expenses.all %}
+                <small>{{ expense.name }}</small>
+                <small>{{ expense.amount }}</small>
+        {% endfor %}
+        <small>{{ report.get_expense_total }}</small>
+    </div>
+{% endfor %}
+
+</body>
+</html>
